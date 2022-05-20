@@ -1,0 +1,13 @@
+version: '2.1'
+
+services:
+  ardoq-api-prototype:
+    build:
+      context: .
+      args:
+        - http_proxy
+        - https_proxy
+        - no_proxy
+    image: hmctspublic.azurecr.io/hofse/ardoq-api-prototype
+    ports:
+      - $SERVER_PORT:$SERVER_PORT

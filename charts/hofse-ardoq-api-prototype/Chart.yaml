@@ -1,0 +1,12 @@
+apiVersion: v2
+appVersion: "1.0"
+description: A Helm chart for hofse-ardoq-api-prototype App
+name: hofse-ardoq-api-prototype
+home: https://github.com/hmcts/hofse-ardoq-api-prototype
+version: 0.0.1
+maintainers:
+  - name: HMCTS hofse team
+dependencies:
+  - name: java
+    version: 3.7.7
+    repository: 'https://hmctspublic.azurecr.io/helm/v1/repo/'

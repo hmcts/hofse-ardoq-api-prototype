@@ -1,0 +1,20 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "hofse-ardoq-api-prototype"
+  description: Ardoq API Prototype
+  annotations:
+    # This must match folder-name/job-name in Jenkins.
+    jenkins.io/job-full-name: cft:HMCTS_hofse/hofse-ardoq-api-prototype
+    github.com/project-slug: 'hmcts/hofse-ardoq-api-prototype'
+  tags:
+    - java
+  links:
+    - url: https://hmcts-reform.slack.com/app_redirect?channel=@Jason Paige
+      title: @Jason Paige on Slack
+      icon: chat
+spec:
+  type: service
+  system: hofse
+  lifecycle: experimental
+  owner: aad-rbac-all-read-only
