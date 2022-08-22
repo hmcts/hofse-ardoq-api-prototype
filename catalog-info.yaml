@@ -11,7 +11,7 @@ metadata:
     - java
   links:
     - url: https://hmcts-reform.slack.com/app_redirect?channel=@Jason Paige
-      title: @Jason Paige on Slack
+      title: "@Jason Paige on Slack"
       icon: chat
 spec:
   type: service
