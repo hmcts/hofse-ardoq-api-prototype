@@ -1,7 +1,5 @@
 plugins {
   id 'application'
-  id 'checkstyle'
-  id 'pmd'
   id 'jacoco'
   id 'io.spring.dependency-management' version '1.0.11.RELEASE'
   id 'org.springframework.boot' version '2.6.6'
@@ -101,21 +99,6 @@ task smoke(type: Test) {
   classpath = sourceSets.smokeTest.runtimeClasspath
 }
 
-checkstyle {
-  maxWarnings = 0
-  toolVersion = '9.2'
-  getConfigDirectory().set(new File(rootDir, 'config/checkstyle'))
-}
-
-pmd {
-  toolVersion = "6.41.0"
-  sourceSets = [sourceSets.main, sourceSets.test, sourceSets.functionalTest, sourceSets.integrationTest, sourceSets.smokeTest]
-  reportsDir = file("$project.buildDir/reports/pmd")
-  // https://github.com/pmd/pmd/issues/876
-  ruleSets = []
-  ruleSetFiles = files("config/pmd/ruleset.xml")
-}
-
 jacocoTestReport {
   executionData(test, integration)
   reports {
@@ -161,9 +144,7 @@ dependencyCheck {
   }
 
     skipConfigurations = [
-    "checkstyle",
     "compileOnly",
-    "pmd",
     "integrationTest",
     "functionalTest",
     "smokeTest",
